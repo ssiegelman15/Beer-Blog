@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS beerblog_db;
+CREATE DATABASE beerblog_db;

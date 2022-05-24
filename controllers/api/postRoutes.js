@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
-      order: [["updatedAt", "DESC"]],
+      order: [["dateCreated", "DESC"]],
     });
     res.status(200).json(postData);
   } catch (err) {

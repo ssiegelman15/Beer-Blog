@@ -2,6 +2,19 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// Find all posts
+router.get("/", async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      order: [["updatedAt", "DESC"]],
+    });
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Create new post
 router.post("/", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -15,6 +28,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+// Delete post by ID
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({

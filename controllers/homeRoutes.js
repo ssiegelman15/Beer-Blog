@@ -24,6 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Get post by ID
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -33,9 +34,9 @@ router.get("/post/:id", async (req, res) => {
         },
       ],
     });
-
+    // Serialize post data
     const post = postData.get({ plain: true });
-
+    // Pass serialized data and session into post template
     res.render("post", {
       ...post,
       logged_in: req.session.logged_in,
@@ -53,9 +54,9 @@ router.get("/profile", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
       include: [{ model: Post }],
     });
-
+    // Serialize user data
     const user = userData.get({ plain: true });
-
+    // Pass serialized data and session into profile template
     res.render("profile", {
       ...user,
       logged_in: true,
@@ -71,7 +72,7 @@ router.get("/login", (req, res) => {
     res.redirect("/profile");
     return;
   }
-
+  // Render login display
   res.render("login");
 });
 

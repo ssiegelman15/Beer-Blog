@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+// Find all users for site
+router.get("/", async (req, res) => {
+  try {
+    const userData = await User.findAll();
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Create user for site
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +27,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Login using user information
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -47,6 +59,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// Logout of site
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

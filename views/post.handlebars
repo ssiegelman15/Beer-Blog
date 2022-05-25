@@ -1,0 +1,25 @@
+<header>
+  <div
+    class="container justify-content-center align-items-center d-flex postTitle"
+  >
+    <h1> {{title}} </h1>
+  </div>
+</header>
+
+<div class="container justify-content-center d-flex">
+  <div class="blog col-md-6">
+    <div class="row">
+      <p class="postContent">
+        {{content}}
+      </p>
+      <p class="postUserDate">
+        Post created by
+        <span class="userName">{{user.name}}</span>
+        on
+        <span class="dateCreated">{{formatDate dateCreated}}</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="/js/comments.js"></script>

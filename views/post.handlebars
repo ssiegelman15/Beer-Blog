@@ -19,6 +19,28 @@
         <span class="dateCreated">{{formatDate dateCreated}}</span>
       </p>
     </div>
+    <hr class="my-3" />
+    <div class='container d-flex flex-wrap flex-lg-nowrap justify-content-center mt-5'>
+      <div class='col-md-8 mx-3 mb-5 px-3'>
+                <h3>Comments</h3>
+                <hr class='my-4' />
+
+                {{#each comments as |comment|}}
+                    <div class='comments'>
+                        <p>
+                            {{comment.comment}}
+                        </p>
+                        <p class='post-meta text-secondary fst-italic'>
+                            Posted by
+                            <span class='user'>{{comment.user.name}}</span>
+                            on
+                            <span class='date'>{{format_date date_created}}</span>
+                        </p>
+                        <hr class='my-4' />
+                    </div>
+                {{/each}}
+
+
   </div>
 </div>
 

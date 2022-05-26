@@ -8,7 +8,7 @@
   <div class="col-md-6">
     <h3>Create a New Beer Review:</h3>
 
-    <form class="form new-project-form">
+    <form class="form newPostForm">
       <div class="form-group">
         <label for="reviewTitle">Title:</label>
         <input
@@ -50,14 +50,14 @@
           <div class="col-md-8">
             <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
           </div>
-          <div class="col-2 edit-button">
+          <div class="col-2 editButton">
             <a href="/edit/{{post.id}}">
               <button class="btn btn-sm btn-warning" data-id="{{post.id}}">
                 Edit Review
               </button>
             </a>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 deleteButton">
             <button class="btn btn-sm btn-danger" data-id="{{project.id}}">
               Delete Review
             </button>

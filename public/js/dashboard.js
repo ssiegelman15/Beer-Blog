@@ -1,49 +1,49 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector("#project-name").value.trim();
-  const needed_funding = document
-    .querySelector("#project-funding")
+  const reviewTitle = document.querySelector("reviewTitle").value.trim();
+  const reviewDescription = document
+    .querySelector("reviewDescription")
     .value.trim();
-  const description = document.querySelector("#project-desc").value.trim();
+  const reviewContent = document.querySelector("reviewContent").value.trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (reviewTitle && reviewDescription && reviewContent) {
+    const response = await fetch(`/api/posts`, {
       method: "POST",
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ reviewTitle, reviewDescription, reviewContent }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/dashboard");
     } else {
-      alert("Failed to create project");
+      alert("Review could not be posted, please try again.");
     }
   }
 };
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+  if (event.target.hasAttribute("dataId")) {
+    const id = event.target.getAttribute("dataId");
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/dashboard");
     } else {
-      alert("Failed to delete project");
+      alert("Review could not be deleted, please try again.");
     }
   }
 };
 
 document
-  .querySelector(".new-project-form")
+  .querySelector(".newPostForm")
   .addEventListener("submit", newFormHandler);
 
 document
-  .querySelector(".project-list")
+  .querySelector(".deleteButton")
   .addEventListener("click", delButtonHandler);

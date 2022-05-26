@@ -9,11 +9,12 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: User,
+          foreignKey: "userId",
         },
       ],
     });
     // Serialize post data
-    const posts = postData.map((post) => this.post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
     // Pass serialized data and session into homepage template
     res.render("homepage", {
       posts,

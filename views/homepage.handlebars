@@ -1,28 +1,31 @@
 <div class="container mt-4 d-flex justify-content-center">
-
-  {{#each posts as |post|}}
-    <div class="row mb-4 project">
-      <div class="col-md-5">
-        <a href="/post/{{post.id}}">
-          <h2>
-            {{post.title}}
-          </h2>
-          <h4>
-            {{post.description}}
-          </h4>
-        </a>
-        <p>
-          Posted by
-          <span>
-            {{post.user.name}}
-          </span>
-          on
-          <span>
-            {{formatDate post.dateCreated}}
-          </span>
-        </p>
+  {{#if posts}}
+    {{#each posts as |post|}}
+      <div class="row mb-4 project">
+        <div class="col-md-5">
+          <a href="/post/{{post.id}}">
+            <h2>
+              {{post.title}}
+            </h2>
+            <h4>
+              {{post.description}}
+            </h4>
+          </a>
+          <p>
+            Posted by
+            <span>
+              {{post.user.name}}
+            </span>
+            on
+            <span>
+              {{formatDate post.dateCreated}}
+            </span>
+          </p>
+        </div>
       </div>
-    </div>
-    <hr class="my-3" />
-  {{/each}}
+      <hr class="my-3" />
+    {{/each}}
+  {{else}}
+    <h1>THERE ARE NO POSTS YET TO SHOW!</h1>
+  {{/if}}
 </div>

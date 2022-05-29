@@ -2,16 +2,19 @@
   {
     "name": "Shlomo",
     "email": "ssiegelman15@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "id": 1
   },
   {
     "name": "Jennifer",
     "email": "samad.jennifer@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "id": 2
   },
   {
     "name": "Maeve",
     "email": "imababy@naptime.com",
-    "password": "password12345"
+    "password": "password12345",
+    "id": 3
   }
 ]

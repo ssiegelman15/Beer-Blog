@@ -1,22 +1,21 @@
 const editFormHandler = async (event) => {
   event.preventDefault();
 
-  const reviewTitle = document.querySelector("reviewTitle").value.trim();
-  const reviewDescription = document
-    .querySelector("reviewDescription")
-    .value.trim();
-  const reviewContent = document.querySelector("reviewContent").value.trim();
+  const postId = document.querySelector("#editContent").getAttribute("dataId");
+  const content = document.querySelector("#reviewContent").value.trim();
 
-  if (reviewTitle && reviewDescription && reviewContent) {
-    const response = await fetch(`/api/posts`, {
-      method: "POST",
-      body: JSON.stringify({ reviewTitle, reviewDescription, reviewContent }),
+  if (content) {
+    console.log("we have content");
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: "PUT",
+      body: JSON.stringify({ content }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
+      console.log("response ok");
       document.location.replace("/dashboard");
     } else {
       alert("Review could not be posted, please try again.");

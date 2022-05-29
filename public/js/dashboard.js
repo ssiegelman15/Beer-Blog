@@ -1,16 +1,14 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const reviewTitle = document.querySelector("reviewTitle").value.trim();
-  const reviewDescription = document
-    .querySelector("reviewDescription")
-    .value.trim();
-  const reviewContent = document.querySelector("reviewContent").value.trim();
+  const title = document.querySelector("#reviewTitle").value.trim();
+  const description = document.querySelector("#reviewDescription").value.trim();
+  const content = document.querySelector("#reviewContent").value.trim();
 
-  if (reviewTitle && reviewDescription && reviewContent) {
+  if (title && description && content) {
     const response = await fetch(`/api/posts`, {
       method: "POST",
-      body: JSON.stringify({ reviewTitle, reviewDescription, reviewContent }),
+      body: JSON.stringify({ title, description, content }),
       headers: {
         "Content-Type": "application/json",
       },

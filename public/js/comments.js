@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.replace(`/posts/${postId}`);
+        document.location.replace(`/post/${postId}`);
       } else {
         alert("Comment could not be created, please try again.");
       }

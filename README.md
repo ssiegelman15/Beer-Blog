@@ -34,7 +34,7 @@ This beer blog is a fullstack application where users can create profiles to lea
 
 ## Screenshot
 
-![Screenshot of Blog](./public/images/Webpage%20Screenshot.png)
+![Screenshot of Blog](./public/images/screenshot.png)
 
 ## Installation
 

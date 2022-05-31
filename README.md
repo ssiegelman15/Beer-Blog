@@ -5,6 +5,7 @@
   ## Table of Contents
 - [Description](#description)
 - [Technologies](#technologies)
+- [Screenshot](#screenshot)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -29,6 +30,10 @@ This beer blog is a fullstack application where users can create profiles to lea
 - Bootstrap
 - Handlebars
 - Heroku
+
+## Screenshot
+
+![Screenshot of Blog](./public/images/Webpage-Screenshot.png)
 
 ## Installation
 

@@ -18,7 +18,7 @@ const sess = {
   secret: "Super secret secret",
   // Set session to expire after 3 minutes
   cookie: {
-    expires: 60000,
+    expires: 180000,
   },
   resave: true,
   saveUninitialized: true,

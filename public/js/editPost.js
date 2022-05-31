@@ -5,7 +5,6 @@ const editFormHandler = async (event) => {
   const content = document.querySelector("#reviewContent").value.trim();
 
   if (content) {
-    console.log("we have content");
     const response = await fetch(`/api/posts/${postId}`, {
       method: "PUT",
       body: JSON.stringify({ content }),

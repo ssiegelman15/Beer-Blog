@@ -13,18 +13,18 @@
 
 <div class="container mt-4 d-flex justify-content-center">
   {{#if posts}}
-    {{#each posts as |post|}}
-      <div class="row mb-4 project">
-        <div class="col-md-5">
-          <a href="/post/{{post.id}}">
-            <h2>
+    <div class="row mb-4 blog">
+      {{#each posts as |post|}}
+        <div class="col-md-5 post mx-auto">
+          <a class="nav-link post-item" href="/post/{{post.id}}">
+            <h2 class="post-title text-dark">
               {{post.title}}
             </h2>
-            <h4>
+            <h4 class="post-subtitle text-dark">
               {{post.description}}
             </h4>
           </a>
-          <p>
+          <p class="post-meta">
             Posted by
             <span>
               {{post.user.name}}
@@ -35,9 +35,10 @@
             </span>
           </p>
         </div>
-      </div>
-      <hr class="my-3" />
-    {{/each}}
+
+        <hr class="my-3" />
+      {{/each}}
+    </div>
   {{else}}
     <h1>THERE ARE NO POSTS YET TO SHOW!</h1>
   {{/if}}

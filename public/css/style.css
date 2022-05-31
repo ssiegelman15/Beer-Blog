@@ -1,6 +1,6 @@
 .jumbotron {
   width: 100vw;
-  /* max-height: 400px; */
+  height: 400px;
   background-image: url("../images/Beer-Flight.jpg");
   background-size: cover;
   color: black;

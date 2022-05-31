@@ -4,6 +4,7 @@
 
   ## Table of Contents
 - [Description](#description)
+- [Technologies](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -14,6 +15,20 @@
 ## Description
 
 This beer blog is a fullstack application where users can create profiles to leave beer reviews or comments on existing beer reviews
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express.js
+- MySQL
+- Sequelize
+- Express-Session
+- Bootstrap
+- Handlebars
+- Heroku
 
 ## Installation
 

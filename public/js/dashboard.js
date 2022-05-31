@@ -23,6 +23,7 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+    event.preventDefault();
   if (event.target.hasAttribute("dataId")) {
     const postId = event.target.getAttribute("dataId");
 

@@ -43,6 +43,8 @@ document
   .querySelector(".newPostForm")
   .addEventListener("submit", newFormHandler);
 
-document
-  .querySelector(".deleteButton")
-  .addEventListener("click", delButtonHandler);
+// document
+//   .querySelector(".deleteButton")
+//   .addEventListener("click", delButtonHandler);
+
+document.querySelectorAll(".deleteButton").forEach(button => button.addEventListener("click", delButtonHandler))
